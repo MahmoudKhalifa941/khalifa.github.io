@@ -3106,10 +3106,8 @@ function showClosingSequence() {
     `;
     
     farewellMsg.innerHTML = `
-        <div style="margin-bottom: 20px;">✨ شكراً لمشاهدتكم ✨</div>
-        <div style="font-size: 1.2rem; font-weight: 400;">العرض السينمائي المذهل انتهى</div>
-        <div style="font-size: 1rem; margin-top: 15px; opacity: 0.8;">نلتقي قريباً مع المزيد من الإبداع</div>
-    `;
+        <div style="margin-bottom: 20px;">✨ شكراً لكم ✨</div>
+        `;
     
     document.body.appendChild(farewellMsg);
     
