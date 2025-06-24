@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حفل توديع المعلمين المتميزين</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="hollywood-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- مكتبات الأنيمايشن -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="performance-boost.js"></script>
+    <script src="quick-fix.js"></script>
+</head>
+<body>
+    <!-- خلفية متحركة -->
+    <div class="particles-bg"></div>
+    
+    <!-- الشاشة الافتتاحية -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="logo-animation">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h1 class="loading-title">حفل توديع المعلمين المتميزين</h1>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p class="loading-text">جاري تحضير الذكريات الجميلة...</p>
+        </div>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div id="main-content" class="main-content hidden">
+        <!-- القائمة العلوية -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>توديع المعلمين</span>
+                </div>
+                <div class="nav-controls">
+                    <button id="play-pause-btn" class="nav-btn" title="تشغيل/إيقاف الموسيقى">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="volume-btn" class="nav-btn" title="إعدادات الصوت">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <button id="fullscreen-btn" class="nav-btn" title="الشاشة الكاملة">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <button id="slideshow-btn" class="nav-btn" title="العرض التقديمي">
+                        <i class="fas fa-images"></i>
+                    </button>
+                </div>
+                
+                <!-- لوحة التحكم في الصوت -->
+                <div id="audio-control-panel" class="audio-control-panel hidden">
+                    <div class="audio-panel-header">
+                        <h3><i class="fas fa-volume-up"></i> إعدادات الصوت</h3>
+                        <button id="close-audio-panel" class="close-btn-audio">×</button>
+                    </div>
+                    
+                    <div class="audio-controls-grid">
+                        <div class="audio-control-item">
+                            <label for="master-volume">مستوى الصوت العام</label>
+                            <div class="volume-control">
+                                <input type="range" id="master-volume" min="0" max="100" value="70">
+                                <span id="master-volume-value">70%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="audio-control-item">
+                            <label for="background-volume">الموسيقى الخلفية</label>
+                            <div class="volume-control">
+                                <input type="range" id="background-volume" min="0" max="100" value="50">
+                                <span id="background-volume-value">50%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="audio-control-item">
+                            <label for="welcome-volume">صوت الترحيب</label>
+                            <div class="volume-control">
+                                <input type="range" id="welcome-volume" min="0" max="100" value="80">
+                                <span id="welcome-volume-value">80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="audio-actions">
+                        <button id="mute-all-btn" class="audio-action-btn">
+                            <i class="fas fa-volume-mute"></i>
+                            كتم الصوت
+                        </button>
+                        <button id="reset-audio-btn" class="audio-action-btn">
+                            <i class="fas fa-undo"></i>
+                            إعادة تعيين
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- العنوان الرئيسي -->
+        <header class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">شكراً لكم</span>
+                    <span class="title-line">معلمينا الأعزاء</span>
+                </h1>
+                <p class="hero-subtitle">
+                    لقد كنتم منارة العلم والأخلاق، وسنبقى نذكركم بكل خير وامتنان
+                </p>
+                <div class="hero-decorations">
+                    <div class="decoration-item">🌟</div>
+                    <div class="decoration-item">📚</div>
+                    <div class="decoration-item">🎓</div>
+                    <div class="decoration-item">💐</div>
+                    <div class="decoration-item">🌟</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- الجاليري -->
+        <section class="gallery-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-camera"></i>
+                    ذكريات لا تُنسى
+                </h2>
+                
+                <!-- شريط التحكم -->
+                <div class="gallery-controls">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-th"></i>
+                        جميع الصور
+                    </button>
+                    <button class="filter-btn" data-filter="ceremony">
+                        <i class="fas fa-award"></i>
+                        الحفل
+                    </button>
+                    <button class="filter-btn" data-filter="teachers">
+                        <i class="fas fa-user-tie"></i>
+                        المعلمين
+                    </button>
+                    <button class="filter-btn" data-filter="moments">
+                        <i class="fas fa-heart"></i>
+                        لحظات مميزة
+                    </button>
+                </div>
+
+                <!-- الجاليري -->
+                <div class="gallery-grid" id="gallery-grid">
+                    <!-- الصور ستتم إضافتها بواسطة JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- مودال عرض الصورة -->
+        <div id="image-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="modal-navigation">
+                    <button class="nav-btn prev-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="nav-btn next-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+                <img id="modal-image" src="" alt="">
+                <div class="modal-info">
+                    <h3 id="modal-title"></h3>
+                    <p id="modal-description"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم الرسائل -->
+        <section class="messages-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-envelope-heart"></i>
+                    كلمات شكر وتقدير
+                </h2>
+                <div class="messages-grid">
+                    <div class="message-card">
+                        <div class="message-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="message-text">
+                            "التعليم مهنة تخلق جميع المهن الأخرى، وأنتم من صنعتم الأجيال"
+                        </p>
+                        <div class="message-author">رسالة امتنان</div>
+                    </div>
+                    <div class="message-card">
+                        <div class="message-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <p class="message-text">
+                            "شكراً لكم على سنوات العطاء والتفاني، لقد تركتم بصمة في كل قلب"
+                        </p>
+                        <div class="message-author">رسالة تقدير</div>
+                    </div>
+                    <div class="message-card">
+                        <div class="message-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="message-text">
+                            "معلم اليوم هو قائد المستقبل، وأنتم كنتم خير قادة لنا"
+                        </p>
+                        <div class="message-author">رسالة فخر</div>
+                    </div>
+                    <div class="message-card">
+                        <div class="message-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <p class="message-text">
+                            "لم تعلمونا المناهج فقط، بل علمتمونا معنى الأخلاق والقيم"
+                        </p>
+                        <div class="message-author">رسالة محبة</div>
+                    </div>
+                    <div class="message-card">
+                        <div class="message-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <p class="message-text">
+                            "زرعتم في عقولنا بذور المعرفة، وفي قلوبنا حب التعلم"
+                        </p>
+                        <div class="message-author">رسالة عرفان</div>
+                    </div>
+                    <div class="message-card">
+                        <div class="message-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <p class="message-text">
+                            "أنتم ملوك بلا تيجان، حكمتم القلوب بالعلم والحكمة"
+                        </p>
+                        <div class="message-author">رسالة إجلال</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- التذييل -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>
+                            <i class="fas fa-graduation-cap"></i>
+                            حفل توديع المعلمين المتميزين
+                        </h3>
+                        <p>نشكركم على سنوات العطاء والتميز</p>
+                    </div>
+                    <div class="footer-section">
+                        <div class="social-links">
+                            <div class="social-link">
+                                <i class="fas fa-heart"></i>
+                                <span>مع كل الحب والتقدير</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 - مع أطيب التمنيات للمعلمين الأعزاء</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- الصوت - الموسيقى الخلفية فقط -->
+    <audio id="background-music" loop>
+        <source src="sounds/background-music.mp3" type="audio/mpeg">
+        <source src="sounds/background-music.ogg" type="audio/ogg">
+        <source src="sounds/background-music.wav" type="audio/wav">
+    </audio>
+
+    <!-- صوت الترحيب يبدأ مع التحميل -->
+    <audio id="welcome-sound">
+        <source src="sounds/welcome-sound.mp3" type="audio/mpeg">
+        <source src="sounds/welcome-sound.ogg" type="audio/ogg">
+        <source src="sounds/welcome-sound.wav" type="audio/wav">
+    </audio>
+
+    <script src="texts.js"></script>
+    <script src="script.js"></script>
+    <script src="audio-controls.js"></script>
+</body>
+</html> 

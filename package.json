@@ -1,0 +1,46 @@
+{
+  "name": "teacher-farewell-gallery",
+  "version": "1.0.0",
+  "description": "موقع جاليري مذهل لحفل توديع المعلمين المتميزين",
+  "main": "index.html",
+  "scripts": {
+    "start": "open index.html",
+    "serve": "python -m http.server 8000",
+    "open": "open http://localhost:8000"
+  },
+  "keywords": [
+    "gallery",
+    "teachers",
+    "farewell",
+    "celebration",
+    "arabic",
+    "responsive",
+    "animation"
+  ],
+  "author": "مطور الموقع",
+  "license": "MIT",
+  "homepage": "./index.html",
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "> 1%"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "files": [
+    "index.html",
+    "styles.css",
+    "script.js",
+    "*.jpeg",
+    "*.jpg",
+    "*.png",
+    "README.md"
+  ]
+} 

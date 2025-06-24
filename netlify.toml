@@ -1,0 +1,98 @@
+# ⚡ إعدادات تحسين Netlify للعرض السينمائي
+# ===============================================
+
+[build]
+  # مجلد النشر
+  publish = "."
+
+[build.processing]
+  # تحسين تلقائي للتصفح
+  skip_processing = false
+
+[build.processing.css]
+  # ضغط CSS تلقائياً
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  # ضغط JavaScript تلقائياً
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  # ضغط HTML تلقائياً
+  pretty_urls = true
+
+[build.processing.images]
+  # تحسين الصور تلقائياً
+  compress = true
+
+# قواعد إعادة التوجيه والتحسين
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# تحسين التخزين المؤقت
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # تفعيل ضغط gzip
+    Content-Encoding = "gzip"
+    # تخزين مؤقت للملفات الثابتة
+    Cache-Control = "public, max-age=31536000"
+    # تحسينات الأمان
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+
+# تحسين خاص للصور
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# تحسين للملفات النصية
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+    Content-Type = "text/css; charset=utf-8"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+    Content-Type = "application/javascript; charset=utf-8"
+
+# تحسين لملف HTML الرئيسي
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# إعدادات متقدمة للأداء
+[context.production.environment]
+  NODE_ENV = "production"
+
+# قواعد خاصة للأمان
+[[headers]]
+  for = "/"
+  [headers.values]
+    # تحسينات الأداء
+    Link = '''
+    </styles.css>; rel=preload; as=style,
+    </hollywood-styles.css>; rel=preload; as=style,
+    <https://fonts.googleapis.com>; rel=preconnect,
+    <https://cdnjs.cloudflare.com>; rel=preconnect
+    ''' 
