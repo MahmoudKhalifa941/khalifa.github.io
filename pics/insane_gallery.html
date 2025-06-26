@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟🔥 معرض ياسمين الجنوني - INSANE GALLERY 🔥🌟</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lalezar&family=Markazi+Text:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --neon-cyan: #00ffff;
+            --neon-magenta: #ff00ff;
+            --neon-yellow: #ffff00;
+            --neon-green: #00ff00;
+            --electric-blue: #0066ff;
+            --fire-red: #ff3300;
+            --cosmic-purple: #6600cc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Markazi Text', serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        /* Insane Cursor Effects */
+        .cursor-main {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--neon-cyan);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: all 0.1s ease;
+            animation: cursorPulse 1s infinite;
+        }
+
+        .cursor-trail {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: var(--neon-magenta);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes cursorPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* Matrix Rain Background */
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+            background: #000;
+        }
+
+        .matrix-column {
+            position: absolute;
+            top: -100%;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: var(--neon-green);
+            animation: matrixFall linear infinite;
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+
+        @keyframes matrixFall {
+            0% { top: -100%; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        /* Psychedelic Background */
+        .psychedelic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, var(--neon-cyan) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, var(--neon-magenta) 0%, transparent 50%),
+                radial-gradient(circle at 60% 40%, var(--neon-yellow) 0%, transparent 50%),
+                conic-gradient(from 0deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
+            opacity: 0.1;
+            animation: psychedelicRotate 10s linear infinite;
+            z-index: -2;
+        }
+
+        @keyframes psychedelicRotate {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(360deg) scale(1.1); }
+        }
+
+        /* Glitch Effects */
+        .glitch-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .glitch-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 0, 0, 0.05) 3px,
+                    rgba(0, 255, 0, 0.05) 4px,
+                    rgba(0, 0, 255, 0.05) 5px,
+                    transparent 6px
+                );
+            animation: glitchEffect 0.5s infinite;
+        }
+
+        @keyframes glitchEffect {
+            0%, 90%, 100% { opacity: 0; transform: translateX(0); }
+            92% { opacity: 0.8; transform: translateX(2px); }
+            94% { opacity: 0.6; transform: translateX(-2px); }
+            96% { opacity: 0.4; transform: translateX(1px); }
+        }
+
+        /* Entrance Screen */
+        .entrance-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #000, #1a0033, #330066, #660099, #9900cc, #cc00ff);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: entranceAnimation 3s ease-in-out;
+        }
+
+        @keyframes entranceAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .insane-title {
+            font-family: 'Lalezar', cursive;
+            font-size: 8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-magenta), var(--neon-yellow), var(--neon-green));
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: insaneGradient 2s ease-in-out infinite, titleShake 0.1s infinite;
+            text-shadow: 0 0 50px rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            transform: perspective(500px) rotateX(15deg);
+        }
+
+        @keyframes insaneGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes titleShake {
+            0%, 100% { transform: perspective(500px) rotateX(15deg) translateX(0); }
+            25% { transform: perspective(500px) rotateX(15deg) translateX(-1px); }
+            50% { transform: perspective(500px) rotateX(15deg) translateX(1px); }
+            75% { transform: perspective(500px) rotateX(15deg) translateX(-0.5px); }
+        }
+
+        .warning-text {
+            font-size: 2rem;
+            color: var(--neon-yellow);
+            margin-bottom: 30px;
+            animation: blinkingText 1s infinite;
+            text-shadow: 0 0 20px var(--neon-yellow);
+        }
+
+        @keyframes blinkingText {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+
+        .enter-insanity {
+            padding: 30px 60px;
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            border: 4px solid var(--neon-magenta);
+            border-radius: 70px;
+            color: var(--neon-magenta);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: buttonPulse 2s infinite;
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% { box-shadow: 0 0 20px var(--neon-magenta); }
+            50% { box-shadow: 0 0 60px var(--neon-magenta), 0 0 100px var(--neon-magenta); }
+        }
+
+        .enter-insanity:hover {
+            transform: scale(1.1) rotateZ(5deg);
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+            animation: buttonCrazy 0.5s infinite;
+        }
+
+        @keyframes buttonCrazy {
+            0% { transform: scale(1.1) rotateZ(5deg); }
+            25% { transform: scale(1.2) rotateZ(-5deg); }
+            50% { transform: scale(1.15) rotateZ(10deg); }
+            75% { transform: scale(1.05) rotateZ(-2deg); }
+            100% { transform: scale(1.1) rotateZ(5deg); }
+        }
+
+        /* Main Gallery */
+        .insane-gallery {
+            display: none;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Crazy Header */
+        .crazy-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 3px solid var(--neon-cyan);
+            z-index: 100;
+        }
+
+        .gallery-title {
+            font-family: 'Lalezar', cursive;
+            font-size: 3rem;
+            text-align: center;
+            background: linear-gradient(45deg, var(--fire-red), var(--neon-yellow), var(--neon-green), var(--electric-blue));
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: crazyTitleFlow 3s ease-in-out infinite;
+        }
+
+        @keyframes crazyTitleFlow {
+            0%, 100% { background-position: 0% 50%; transform: skew(0deg); }
+            25% { background-position: 25% 25%; transform: skew(2deg); }
+            50% { background-position: 100% 50%; transform: skew(0deg); }
+            75% { background-position: 75% 75%; transform: skew(-2deg); }
+        }
+
+        /* 4D Slideshow Container */
+        .slideshow-4d {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: calc(100vh - 250px);
+            perspective: 3000px;
+            transform-style: preserve-3d;
+        }
+
+        .slide-cube {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .slide-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 5px solid var(--neon-cyan);
+            box-shadow: 
+                0 0 50px var(--neon-cyan),
+                inset 0 0 50px rgba(0, 255, 255, 0.2);
+        }
+
+        .slide-face img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: 
+                brightness(0.8) 
+                contrast(1.4) 
+                saturate(1.5) 
+                hue-rotate(0deg);
+            transition: all 3s ease;
+            animation: insaneImageEffect 15s infinite;
+        }
+
+        @keyframes insaneImageEffect {
+            0% { 
+                filter: brightness(0.8) contrast(1.4) saturate(1.5) hue-rotate(0deg);
+                transform: scale(1) rotate(0deg);
+            }
+            20% { 
+                filter: brightness(1.2) contrast(1.6) saturate(2) hue-rotate(72deg);
+                transform: scale(1.05) rotate(1deg);
+            }
+            40% { 
+                filter: brightness(0.9) contrast(1.8) saturate(1.8) hue-rotate(144deg);
+                transform: scale(1.1) rotate(0deg);
+            }
+            60% { 
+                filter: brightness(1.1) contrast(1.5) saturate(2.2) hue-rotate(216deg);
+                transform: scale(1.03) rotate(-1deg);
+            }
+            80% { 
+                filter: brightness(0.95) contrast(1.7) saturate(1.6) hue-rotate(288deg);
+                transform: scale(1.08) rotate(0.5deg);
+            }
+            100% { 
+                filter: brightness(0.8) contrast(1.4) saturate(1.5) hue-rotate(360deg);
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        /* Insane Overlays */
+        .neon-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(0,255,255,0.3) 50%, transparent 70%),
+                linear-gradient(-45deg, transparent 30%, rgba(255,0,255,0.3) 50%, transparent 70%),
+                radial-gradient(circle at center, transparent 40%, rgba(255,255,0,0.2) 70%);
+            animation: neonOverlayShift 4s infinite;
+            mix-blend-mode: screen;
+        }
+
+        @keyframes neonOverlayShift {
+            0%, 100% { 
+                opacity: 0.7; 
+                transform: translateX(0) scale(1) rotate(0deg); 
+            }
+            25% { 
+                opacity: 1; 
+                transform: translateX(10px) scale(1.02) rotate(1deg); 
+            }
+            50% { 
+                opacity: 0.8; 
+                transform: translateX(-5px) scale(0.98) rotate(-0.5deg); 
+            }
+            75% { 
+                opacity: 0.9; 
+                transform: translateX(15px) scale(1.01) rotate(0.5deg); 
+            }
+        }
+
+        .digital-noise {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent 0px,
+                    rgba(255, 255, 255, 0.05) 1px,
+                    transparent 2px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent 0px,
+                    rgba(255, 255, 255, 0.03) 1px,
+                    transparent 2px
+                );
+            animation: digitalNoise 0.2s infinite;
+        }
+
+        @keyframes digitalNoise {
+            0%, 90%, 100% { opacity: 0.1; }
+            95% { opacity: 0.3; }
+        }
+
+        /* Insane Info Panel */
+        .info-panel {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.95) 100%);
+            padding: 30px;
+            border-top: 3px solid var(--neon-magenta);
+        }
+
+        .slide-counter {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--neon-yellow);
+            text-shadow: 0 0 30px var(--neon-yellow);
+            margin-bottom: 15px;
+            animation: counterGlow 2s infinite;
+        }
+
+        @keyframes counterGlow {
+            0%, 100% { text-shadow: 0 0 30px var(--neon-yellow); }
+            50% { text-shadow: 0 0 60px var(--neon-yellow), 0 0 90px var(--neon-yellow); }
+        }
+
+        /* Navigation Controls */
+        .nav-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 200;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(0,255,255,0.8) 0%, rgba(255,0,255,0.8) 100%);
+            border: 5px solid var(--neon-cyan);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: navPulse 3s infinite;
+        }
+
+        @keyframes navPulse {
+            0%, 100% { 
+                box-shadow: 0 0 30px var(--neon-cyan);
+                transform: translateY(-50%) scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 80px var(--neon-cyan), 0 0 120px var(--neon-magenta);
+                transform: translateY(-50%) scale(1.1);
+            }
+        }
+
+        .nav-control:hover {
+            animation: navCrazy 0.5s infinite;
+            background: radial-gradient(circle, rgba(255,0,255,1) 0%, rgba(255,255,0,1) 100%);
+        }
+
+        @keyframes navCrazy {
+            0% { transform: translateY(-50%) scale(1.1) rotate(0deg); }
+            25% { transform: translateY(-50%) scale(1.3) rotate(90deg); }
+            50% { transform: translateY(-50%) scale(1.2) rotate(180deg); }
+            75% { transform: translateY(-50%) scale(1.4) rotate(270deg); }
+            100% { transform: translateY(-50%) scale(1.1) rotate(360deg); }
+        }
+
+        .prev { left: 50px; }
+        .next { right: 50px; }
+
+        /* Insane Controls */
+        .insane-controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 300;
+        }
+
+        .control-insane {
+            width: 80px;
+            height: 80px;
+            background: conic-gradient(from 0deg, var(--neon-cyan), var(--neon-magenta), var(--neon-yellow), var(--neon-green), var(--neon-cyan));
+            border: 3px solid var(--neon-cyan);
+            border-radius: 50%;
+            color: #000;
+            font-size: 2rem;
+            font-weight: 900;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: controlSpin 5s linear infinite;
+        }
+
+        @keyframes controlSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .control-insane:hover {
+            animation: controlCrazy 0.3s infinite;
+            transform: scale(1.3);
+        }
+
+        @keyframes controlCrazy {
+            0% { transform: scale(1.3) rotate(0deg); }
+            50% { transform: scale(1.5) rotate(180deg); }
+            100% { transform: scale(1.3) rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .insane-title { font-size: 4rem; }
+            .gallery-title { font-size: 2rem; }
+            .slideshow-4d { width: 95%; height: calc(100vh - 200px); }
+            .nav-control { width: 70px; height: 70px; font-size: 2rem; }
+            .control-insane { width: 60px; height: 60px; font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Insane Cursor -->
+    <div class="cursor-main"></div>
+    <div class="cursor-trail"></div>
+
+    <!-- Matrix Rain -->
+    <div class="matrix-rain" id="matrixRain"></div>
+
+    <!-- Psychedelic Background -->
+    <div class="psychedelic-bg"></div>
+
+    <!-- Glitch Effects -->
+    <div class="glitch-container">
+        <div class="glitch-layer"></div>
+    </div>
+
+    <!-- Entrance Screen -->
+    <div class="entrance-screen" id="entranceScreen">
+        <h1 class="insane-title">مجنونة ياسمين</h1>
+        <p class="warning-text">⚠️ تحذير: تأثيرات بصرية مجنونة! ⚠️</p>
+        <button class="enter-insanity" onclick="enterInsanity()">
+            🚀 ادخل الجنون! 🚀
+        </button>
+    </div>
+
+    <!-- Insane Gallery -->
+    <div class="insane-gallery" id="insaneGallery">
+        <div class="crazy-header">
+            <h1 class="gallery-title">🌀 معرض ياسمين الجنوني 🌀</h1>
+        </div>
+
+        <div class="slideshow-4d">
+            <div class="slide-cube" id="slideCube">
+                <!-- Slides will be generated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="nav-control prev" onclick="changeSlide(-1)">❮</div>
+        <div class="nav-control next" onclick="changeSlide(1)">❯</div>
+
+        <div class="info-panel">
+            <div class="slide-counter" id="slideCounter">1 / 47</div>
+        </div>
+    </div>
+
+    <!-- Insane Controls -->
+    <div class="insane-controls" id="insaneControls" style="display: none;">
+        <div class="control-insane" onclick="toggleAutoplay()" id="playControl">⏸️</div>
+        <div class="control-insane" onclick="insaneMode()">🤯</div>
+        <div class="control-insane" onclick="randomSlide()">🎲</div>
+        <div class="control-insane" onclick="exitInsanity()">🏠</div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        let isAutoplay = true;
+        let autoplayInterval;
+        let insaneModeActive = false;
+        const totalSlides = 47;
+        const slides = [];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            setupInsaneCursor();
+            createMatrixRain();
+            preloadImages();
+        });
+
+        // Insane cursor
+        function setupInsaneCursor() {
+            const cursor = document.querySelector('.cursor-main');
+            const trail = document.querySelector('.cursor-trail');
+            
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX - 20 + 'px';
+                cursor.style.top = e.clientY - 20 + 'px';
+                
+                setTimeout(() => {
+                    trail.style.left = e.clientX - 3 + 'px';
+                    trail.style.top = e.clientY - 3 + 'px';
+                }, 100);
+            });
+        }
+
+        // Matrix rain effect
+        function createMatrixRain() {
+            const container = document.getElementById('matrixRain');
+            const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZابتثجحخدذرزسشصضطظعغفقكلمنهوي';
+            
+            for (let i = 0; i < 30; i++) {
+                const column = document.createElement('div');
+                column.className = 'matrix-column';
+                column.style.left = Math.random() * 100 + '%';
+                column.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                column.style.animationDelay = Math.random() * 2 + 's';
+                
+                let text = '';
+                for (let j = 0; j < 20; j++) {
+                    text += chars[Math.floor(Math.random() * chars.length)] + '<br>';
+                }
+                column.innerHTML = text;
+                container.appendChild(column);
+            }
+        }
+
+        // Preload images
+        function preloadImages() {
+            for (let i = 1; i <= totalSlides; i++) {
+                const img = new Image();
+                img.src = `image_${i.toString().padStart(3, '0')}.jpeg`;
+                slides.push({
+                    src: img.src,
+                    title: `صورة جنونية ${i}`
+                });
+            }
+        }
+
+        // Enter insanity
+        function enterInsanity() {
+            document.getElementById('entranceScreen').style.transform = 'scale(0) rotate(720deg)';
+            document.getElementById('entranceScreen').style.opacity = '0';
+            
+            setTimeout(() => {
+                document.getElementById('entranceScreen').style.display = 'none';
+                document.getElementById('insaneGallery').style.display = 'block';
+                document.getElementById('insaneControls').style.display = 'flex';
+                initializeInsaneGallery();
+                startAutoplay();
+            }, 1000);
+        }
+
+        // Initialize insane gallery
+        function initializeInsaneGallery() {
+            const slideCube = document.getElementById('slideCube');
+            
+            slides.forEach((slide, index) => {
+                const face = document.createElement('div');
+                face.className = 'slide-face';
+                face.style.transform = `rotateY(${index * (360 / totalSlides)}deg) translateZ(400px)`;
+                face.innerHTML = `
+                    <img src="${slide.src}" alt="${slide.title}">
+                    <div class="neon-overlay"></div>
+                    <div class="digital-noise"></div>
+                `;
+                slideCube.appendChild(face);
+            });
+        }
+
+        function showSlide(n) {
+            if (n >= totalSlides) currentSlide = 0;
+            if (n < 0) currentSlide = totalSlides - 1;
+            
+            const slideCube = document.getElementById('slideCube');
+            const rotation = -(currentSlide * (360 / totalSlides));
+            slideCube.style.transform = `rotateY(${rotation}deg)`;
+            
+            document.getElementById('slideCounter').textContent = `${currentSlide + 1} / ${totalSlides}`;
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            showSlide(currentSlide);
+        }
+
+        function toggleAutoplay() {
+            const btn = document.getElementById('playControl');
+            if (isAutoplay) {
+                clearInterval(autoplayInterval);
+                btn.textContent = '▶️';
+                isAutoplay = false;
+            } else {
+                startAutoplay();
+                btn.textContent = '⏸️';
+                isAutoplay = true;
+            }
+        }
+
+        function startAutoplay() {
+            autoplayInterval = setInterval(() => {
+                currentSlide++;
+                showSlide(currentSlide);
+            }, 3000);
+        }
+
+        function insaneMode() {
+            insaneModeActive = !insaneModeActive;
+            const gallery = document.getElementById('insaneGallery');
+            
+            if (insaneModeActive) {
+                gallery.style.animation = 'insaneRotation 2s infinite';
+                document.body.style.filter = 'hue-rotate(180deg) invert(0.1)';
+            } else {
+                gallery.style.animation = 'none';
+                document.body.style.filter = 'none';
+            }
+        }
+
+        function randomSlide() {
+            currentSlide = Math.floor(Math.random() * totalSlides);
+            showSlide(currentSlide);
+        }
+
+        function exitInsanity() {
+            document.getElementById('insaneGallery').style.display = 'none';
+            document.getElementById('insaneControls').style.display = 'none';
+            document.getElementById('entranceScreen').style.display = 'flex';
+            document.getElementById('entranceScreen').style.transform = 'scale(1) rotate(0deg)';
+            document.getElementById('entranceScreen').style.opacity = '1';
+            clearInterval(autoplayInterval);
+        }
+
+        // Keyboard controls
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+            if (e.key === ' ') {
+                e.preventDefault();
+                toggleAutoplay();
+            }
+            if (e.key === 'i' || e.key === 'I') insaneMode();
+            if (e.key === 'r' || e.key === 'R') randomSlide();
+            if (e.key === 'Escape') exitInsanity();
+        });
+
+        // Touch support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) changeSlide(1);
+            if (touchEndX - touchStartX > 50) changeSlide(-1);
+        });
+
+        // Add insane rotation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes insaneRotation {
+                0% { transform: rotate(0deg) scale(1); }
+                25% { transform: rotate(90deg) scale(1.1); }
+                50% { transform: rotate(180deg) scale(0.9); }
+                75% { transform: rotate(270deg) scale(1.05); }
+                100% { transform: rotate(360deg) scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
